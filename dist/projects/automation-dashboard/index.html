@@ -1,0 +1,260 @@
+<!DOCTYPE html><html lang="en" class="scroll-smooth"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Automation Dashboard • Project</title><meta name="description" content="Built an open-source dashboard for monitoring CI/CD pipelines, deployment status, and automated workflow health across multiple environments."><link rel="canonical" href="https://example.com/projects/automation-dashboard/"><link rel="alternate" hreflang="en" href="https://example.com/projects/automation-dashboard/"><link rel="alternate" hreflang="de" href="https://example.com/de/projects/automation-dashboard/"><link rel="alternate" hreflang="x-default" href="https://example.com/projects/automation-dashboard/"><link rel="icon" href="/favico.png" sizes="any"><script>
+      // Blocking: apply saved theme before first paint to prevent FOUC
+      (function() {
+        var theme = localStorage.getItem("theme") || "light";
+        if (theme === "dark") document.documentElement.classList.add("dark");
+      })();
+    </script><script>
+      // Locale detection: redirect German-locale browsers to /de/ on first visit
+      (function() {
+        if (localStorage.getItem("locale-pref")) return;
+        var lang = (navigator.language || "").split("-")[0];
+        localStorage.setItem("locale-pref", lang === "de" ? "de" : "en");
+        if (lang === "de" && !location.pathname.startsWith("/de")) {
+          var p = location.pathname === "/" ? "/de/" : "/de" + location.pathname;
+          location.replace(p + location.search + location.hash);
+        }
+      })();
+    </script><meta property="og:type" content="website"><meta property="og:url" content="https://example.com/projects/automation-dashboard/"><meta property="og:title" content="Automation Dashboard • Project"><meta property="og:description" content="Built an open-source dashboard for monitoring CI/CD pipelines, deployment status, and automated workflow health across multiple environments."><meta property="og:image" content="https://example.com/images/og.jpg"><meta property="og:image:secure_url" content="https://example.com/images/og.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Portfolio preview"><meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="de_DE"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Automation Dashboard • Project"><meta name="twitter:description" content="Built an open-source dashboard for monitoring CI/CD pipelines, deployment status, and automated workflow health across multiple environments."><meta name="twitter:image" content="https://example.com/images/og.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Automation Dashboard","description":"Built an open-source dashboard for monitoring CI/CD pipelines, deployment status, and automated workflow health across multiple environments.","dateCreated":"2025-11-15","author":{"@type":"Person","name":"Your Name","url":"https://example.com/"}}</script><link rel="stylesheet" href="/_astro/index.BJ9v0XAq.css">
+<style>.detail-hero{border-bottom:1px solid var(--glass-border)}.detail-hero--cover{height:auto;max-height:420px;background:#18181b}.detail-hero-cover{width:100%;height:auto;max-height:420px;object-fit:cover;object-position:top center;display:block}.detail-hero--logo{height:280px;display:flex;align-items:center;justify-content:center;position:relative;background:linear-gradient(145deg,#f9fafb,#f1f5f9 60%,#ecfdf5)}.dark .detail-hero--logo{background:linear-gradient(145deg,#18181b,#1c1c22 60%,#121e1a)}.detail-hero-logo-wrap{position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center;padding:48px}.detail-hero-logo{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;position:relative;z-index:1;filter:drop-shadow(0 10px 32px rgba(0,0,0,.12))}.dark .detail-hero-logo{filter:drop-shadow(0 10px 32px rgba(0,0,0,.4))}.detail-hero-empty{height:200px;display:grid;place-items:center;background:linear-gradient(145deg,#f9fafb,#f1f5f9)}.dark .detail-hero-empty{background:linear-gradient(145deg,#18181b,#1c1c22)}.gallery-strip{background:#00000005;scrollbar-width:thin}.dark .gallery-strip{background:#ffffff05}.gallery-thumb{cursor:pointer;background:none;border:none;padding:0}.gallery-thumb img{height:80px;width:auto;border-radius:8px;border:1px solid rgba(0,0,0,.08);object-fit:cover;transition:transform .2s ease,box-shadow .2s ease}.dark .gallery-thumb img{border-color:#ffffff1a}.gallery-thumb:hover img{transform:scale(1.04);box-shadow:0 4px 16px #00000026}.lightbox{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:#000000e0;backdrop-filter:blur(8px);opacity:0;pointer-events:none;transition:opacity .25s ease}.lightbox[aria-hidden=false]{opacity:1;pointer-events:auto}.lightbox-img-wrap{max-width:90vw;max-height:85vh;display:flex;align-items:center;justify-content:center}.lightbox-img-wrap img{max-width:90vw;max-height:85vh;object-fit:contain;border-radius:8px;box-shadow:0 8px 40px #0006;user-select:none}.lightbox-close{position:absolute;top:16px;right:20px;background:none;border:none;color:#fff;font-size:28px;cursor:pointer;opacity:.7;transition:opacity .2s;z-index:1;line-height:1;padding:4px 8px}.lightbox-close:hover{opacity:1}.lightbox-prev,.lightbox-next{position:absolute;top:50%;transform:translateY(-50%);background:#ffffff1a;border:1px solid rgba(255,255,255,.2);color:#fff;font-size:32px;line-height:1;padding:8px 14px;border-radius:12px;cursor:pointer;opacity:.7;transition:opacity .2s,background .2s;z-index:1}.lightbox-prev{left:16px}.lightbox-next{right:16px}.lightbox-prev:hover,.lightbox-next:hover{opacity:1;background:#fff3}.lightbox-counter{position:absolute;bottom:16px;left:50%;transform:translate(-50%);color:#fff9;font-size:13px;font-family:ui-monospace,monospace}@media(min-width:768px){.detail-hero--cover,.detail-hero-cover{max-height:480px}.detail-hero--logo{height:340px}.gallery-thumb img{height:96px}}
+</style></head> <body class="min-h-screen flex flex-col overflow-x-hidden bg-zinc-50 dark:bg-zinc-950 text-zinc-900 transition-colors dark:text-zinc-100 selection:bg-emerald-500/30"> <a href="#main-content" class="skip-link">Skip to content</a> <div class="fixed inset-0 -z-10 dark:hidden" style="
+        background-image:
+          radial-gradient(circle at 20% 20%, var(--a2), transparent 45%),
+          radial-gradient(circle at 80% 30%, var(--a1), transparent 45%),
+          radial-gradient(circle at 50% 85%, var(--a3), transparent 50%),
+          linear-gradient(-45deg, rgba(250,250,250,1), rgba(240,253,250,1), rgba(236,253,245,1), rgba(240,249,255,1));
+      "></div> <div class="fixed inset-0 -z-10 hidden dark:block" style="
+        background-image:
+          radial-gradient(circle at 20% 20%, var(--a2), transparent 45%),
+          radial-gradient(circle at 80% 30%, var(--a1), transparent 45%),
+          radial-gradient(circle at 50% 85%, var(--a3), transparent 50%),
+          linear-gradient(-45deg, rgba(9,9,11,1), rgba(2,6,23,1), rgba(6,78,59,1), rgba(9,9,11,1));
+      "></div> <div class="pointer-events-none fixed right-[-520px] top-[-520px] z-0 hidden md:block"> <div class="absolute inset-[-260px] rounded-full blur-[180px] opacity-80 dark:opacity-55" style="
+          background:
+            radial-gradient(circle at 35% 35%, var(--a2), transparent 62%),
+            radial-gradient(circle at 70% 35%, var(--a1), transparent 64%),
+            radial-gradient(circle at 45% 70%, var(--a3), transparent 66%);
+        "></div> <div class="opacity-75 dark:opacity-85 mix-blend-normal dark:mix-blend-screen dark:[filter:drop-shadow(0_0_90px_rgba(20,184,166,.22))]"> <div class="relative" style="width:1300px;height:1300px;"> <div class="pointer-events-none absolute inset-[-20%] rounded-full blur-[60px] opacity-70 dark:opacity-45" style="
+      background:
+        radial-gradient(circle at 35% 35%, var(--a2), transparent 60%),
+        radial-gradient(circle at 70% 30%, var(--a1), transparent 62%),
+        radial-gradient(circle at 45% 70%, var(--a3), transparent 64%);
+    "></div> <div class="pointer-events-none absolute inset-[-6%] rounded-full opacity-60 blur-[14px]" style="
+      -webkit-mask-image: radial-gradient(circle, transparent 66%, #000 74%, transparent 92%);
+      mask-image: radial-gradient(circle, transparent 66%, #000 74%, transparent 92%);
+      background: radial-gradient(circle, rgba(255,255,255,.9), transparent 70%);
+    "></div> <div class="relative h-full w-full overflow-hidden rounded-full"> <canvas class="block h-full w-full" data-orb-canvas data-opacity="0.95"></canvas> </div> </div> <script type="module" src="/_astro/OrbHero.astro_astro_type_script_index_0_lang.B50Q--4h.js"></script> </div> </div> <header class="fixed top-0 left-0 right-0 z-[999] border-b border-zinc-200/60 bg-zinc-50/80 backdrop-blur-md
+             dark:border-zinc-800/60 dark:bg-zinc-950/80" role="banner"> <div class="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3"> <div class="flex items-center gap-4 min-w-0"> <button id="mobileMenuBtn" type="button" class="md:hidden w-[30px] h-[30px] shrink-0 flex items-center justify-center rounded-lg hover:bg-white/10 transition" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"> <svg id="menuIconOpen" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg> <svg id="menuIconClose" class="w-5 h-5 hidden" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> </button> <div class="w-[30px] h-[30px] shrink-0 hidden md:block"></div>  </div> <nav class="flex items-center gap-4 text-sm shrink-0" aria-label="Main navigation"> <a class="hover:underline hidden md:inline" href="/"> Home </a> <div class="relative group hidden md:block"> <a class="hover:underline" href="/projects"> Projects </a> <div class="absolute left-0 top-full hidden pt-2 group-hover:block group-focus-within:block"> <div class="min-w-56 rounded-2xl border p-2 shadow-lg backdrop-blur" style="background: var(--glass); border-color: var(--glass-border);"> <a class="block rounded-xl px-3 py-2 text-sm hover:bg-white/10" href="/projects"> All projects </a> <div class="my-2 h-px opacity-60" style="background: var(--glass-border);"></div> <div class="max-h-64 overflow-auto no-scrollbar"> <a class="tag-dd-link block rounded-xl px-3 py-2 text-sm hover:bg-white/10" href="/projects?tag=Docker"> Docker </a><a class="tag-dd-link block rounded-xl px-3 py-2 text-sm hover:bg-white/10" href="/projects?tag=Enterprise"> Enterprise </a><a class="tag-dd-link block rounded-xl px-3 py-2 text-sm hover:bg-white/10" href="/projects?tag=FastAPI"> FastAPI </a><a class="tag-dd-link block rounded-xl px-3 py-2 text-sm hover:bg-white/10" href="/projects?tag=GitHub%20Actions"> GitHub Actions </a><a class="tag-dd-link block rounded-xl px-3 py-2 text-sm hover:bg-white/10" href="/projects?tag=NLP"> NLP </a><a class="tag-dd-link block rounded-xl px-3 py-2 text-sm hover:bg-white/10" href="/projects?tag=Node.js"> Node.js </a><a class="tag-dd-link block rounded-xl px-3 py-2 text-sm hover:bg-white/10" href="/projects?tag=Open%20Source"> Open Source </a><a class="tag-dd-link block rounded-xl px-3 py-2 text-sm hover:bg-white/10" href="/projects?tag=PostgreSQL"> PostgreSQL </a><a class="tag-dd-link block rounded-xl px-3 py-2 text-sm hover:bg-white/10" href="/projects?tag=Python"> Python </a><a class="tag-dd-link block rounded-xl px-3 py-2 text-sm hover:bg-white/10" href="/projects?tag=RabbitMQ"> RabbitMQ </a><a class="tag-dd-link block rounded-xl px-3 py-2 text-sm hover:bg-white/10" href="/projects?tag=React"> React </a><a class="tag-dd-link block rounded-xl px-3 py-2 text-sm hover:bg-white/10" href="/projects?tag=Research"> Research </a><a class="tag-dd-link block rounded-xl px-3 py-2 text-sm hover:bg-white/10" href="/projects?tag=TypeScript"> TypeScript </a> </div> </div> </div> </div> <div class="header-icon"><a id="langBtn" href="/de/projects/automation-dashboard/" class="rounded-xl border px-3 py-2 text-xs font-semibold transition hover:scale-[1.03]
+         border-zinc-200 bg-zinc-50/20 text-zinc-900 backdrop-blur
+         dark:border-zinc-700 dark:bg-zinc-950/25 dark:text-zinc-100" aria-label="Auf Deutsch wechseln" title="Auf Deutsch wechseln" data-locale-switch="de" onclick="localStorage.setItem('locale-pref','de')"> DE </a></div> <div class="header-icon"><button id="themeBtn" class="rounded-xl border px-3 py-2 text-sm transition hover:scale-[1.03]
+         border-zinc-200 bg-zinc-50/40 text-zinc-900 shadow-sm backdrop-blur
+         dark:border-zinc-700 dark:bg-zinc-950/30 dark:text-zinc-100" aria-label="Toggle theme" title="Toggle theme"> <span class="dark:hidden"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" class="inline"> <path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z" stroke="currentColor" stroke-width="2"></path> <path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.5 1.5M19 19l-1.5-1.5M19 5l-1.5 1.5M5 19l1.5-1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path> </svg> </span> <span class="hidden dark:inline"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" class="inline"> <path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.5 6.5 0 0 0 9.8 9.8Z" stroke="currentColor" stroke-width="2"></path> </svg> </span> </button></div> </nav> </div> <!-- Mobile menu drawer --> <div id="mobileMenu" class="md:hidden hidden border-t border-zinc-200/60 dark:border-zinc-800/60" style="background: var(--glass); backdrop-filter: blur(20px);"> <nav class="flex flex-col px-4 py-4 gap-1 text-sm" aria-label="Mobile navigation"> <a class="rounded-xl px-3 py-2.5 font-semibold hover:bg-white/10 transition" href="/"> Home </a> <a class="rounded-xl px-3 py-2.5 font-semibold hover:bg-white/10 transition" href="/projects"> Projects </a>  </nav> </div> </header> <main id="main-content" class="relative z-10 mx-auto max-w-5xl px-4 pt-24 pb-10 flex-1 w-full overflow-hidden md:overflow-visible" role="main">  <div class="mx-auto max-w-6xl"> <nav class="mb-6 flex items-center justify-between px-2"> <a href="/projects" class="group flex items-center gap-2 text-sm font-semibold text-zinc-700 transition hover:opacity-80 dark:text-zinc-300"> <span class="rounded bg-white/30 px-1.5 py-0.5 font-mono text-xs dark:bg-zinc-800/70">←</span> <span>Back</span> </a> <div class="font-mono text-xs text-zinc-500 dark:text-zinc-400">
+ID: 001 • 2025-11-15 </div> </nav> <article class="overflow-hidden rounded-[32px] border shadow-xl" style="border-color: var(--glass-border); background: var(--glass);">  <div class="detail-hero relative w-full overflow-hidden detail-hero--logo"> <div class="detail-hero-logo-wrap"> <div class="pointer-events-none absolute inset-0 opacity-40" style="background: radial-gradient(800px 400px at 30% 40%, var(--a2), transparent 60%), radial-gradient(800px 500px at 70% 60%, var(--a1), transparent 60%); filter: blur(30px);"></div> <img src="/images/projects/automation-dashboard/logo.png" alt="Automation Dashboard" class="detail-hero-logo" loading="eager" decoding="async"> </div> </div>  <div class="border-b px-6 py-5 md:px-10 md:py-6" style="border-color: var(--glass-border);"> <div class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between"> <div class="min-w-0"> <h1 class="text-2xl md:text-3xl font-black tracking-tight text-zinc-900 dark:text-zinc-100 break-words"> Automation Dashboard </h1> </div> <div class="flex flex-wrap gap-2 shrink-0"> <span class="rounded-full px-3 py-1 text-[11px] font-medium
+                       bg-zinc-100 text-zinc-600
+                       dark:bg-zinc-800 dark:text-zinc-400"> React </span><span class="rounded-full px-3 py-1 text-[11px] font-medium
+                       bg-zinc-100 text-zinc-600
+                       dark:bg-zinc-800 dark:text-zinc-400"> TypeScript </span><span class="rounded-full px-3 py-1 text-[11px] font-medium
+                       bg-zinc-100 text-zinc-600
+                       dark:bg-zinc-800 dark:text-zinc-400"> Docker </span><span class="rounded-full px-3 py-1 text-[11px] font-medium
+                       bg-zinc-100 text-zinc-600
+                       dark:bg-zinc-800 dark:text-zinc-400"> GitHub Actions </span><span class="rounded-full px-3 py-1 text-[11px] font-medium
+                       bg-zinc-100 text-zinc-600
+                       dark:bg-zinc-800 dark:text-zinc-400"> Open Source </span> </div> </div> </div>     <div class="grid gap-0 divide-y dark:divide-zinc-800 lg:grid-cols-[1fr_320px] lg:divide-x lg:divide-y-0"> <div class="p-6 md:p-10"> <div class="prose prose-zinc max-w-none dark:prose-invert prose-a:no-underline hover:prose-a:underline prose-lead:text-base prose-lead:font-normal"> <h3 class="font-mono text-xs uppercase tracking-widest text-zinc-500 dark:text-zinc-400"> Description </h3> <p class="lead">Built an open-source dashboard for monitoring CI/CD pipelines, deployment status, and automated workflow health across multiple environments.</p> <hr class="my-8 border-zinc-200 dark:border-zinc-800"> <div class="lang-en">
+<h2 id="context">Context</h2>
+<p>Modern development teams run dozens of CI/CD pipelines, scheduled tasks, and deployment workflows across multiple environments. Without a single pane of glass, failures go unnoticed and debugging becomes a scavenger hunt across different tools.</p>
+<h2 id="problem">Problem</h2>
+<ul>
+<li>No unified view of pipeline health across GitHub Actions, GitLab CI, and Jenkins</li>
+<li>Alert fatigue from disconnected notification channels</li>
+<li>Deployment history scattered across multiple dashboards with no correlation to incidents</li>
+<li>New team members spend days learning which workflows matter and where to look</li>
+</ul>
+<h2 id="solution">Solution</h2>
+<p>I designed and built <strong>Automation Dashboard</strong> as an open-source monitoring hub:</p>
+<ul>
+<li><strong>Unified pipeline view</strong> aggregating status from GitHub Actions, GitLab CI, and Jenkins via their APIs</li>
+<li><strong>Real-time WebSocket updates</strong> for live build status without polling</li>
+<li><strong>Environment matrix</strong> showing deployment state across dev/staging/production</li>
+<li><strong>Smart alerting</strong> with configurable thresholds — only notify on repeated failures, not flaky one-offs</li>
+<li><strong>Docker Compose deployment</strong> for simple self-hosting with PostgreSQL backend</li>
+</ul>
+<p>Key decisions:</p>
+<ul>
+<li>Chose React + TypeScript for the frontend to leverage existing component libraries</li>
+<li>Built a plugin architecture for CI providers — adding a new provider requires only one adapter file</li>
+<li>Used Server-Sent Events for real-time updates to keep the architecture simple</li>
+</ul>
+<h2 id="outcome">Outcome</h2>
+<ul>
+<li>Reduced mean-time-to-detection for pipeline failures by 80%</li>
+<li>Adopted by 3 internal teams within the first month</li>
+<li>Open-sourced with full documentation — 200+ GitHub stars in first quarter</li>
+<li>Plugin system enabled community contributions for CircleCI and Drone CI adapters</li>
+</ul>
+<h2 id="tech-stack">Tech Stack</h2>
+<p>React, TypeScript, Node.js, Express, PostgreSQL, Docker, WebSocket, REST APIs</p>
+</div>
+<div class="lang-de">
+<h2 id="kontext">Kontext</h2>
+<p>Moderne Entwicklungsteams betreiben Dutzende CI/CD-Pipelines, geplante Tasks und Deployment-Workflows über mehrere Umgebungen. Ohne eine zentrale Übersicht bleiben Fehler unbemerkt und Debugging wird zur Suche über verschiedene Tools.</p>
+<h2 id="problem-1">Problem</h2>
+<ul>
+<li>Keine einheitliche Ansicht des Pipeline-Zustands über GitHub Actions, GitLab CI und Jenkins hinweg</li>
+<li>Alert-Müdigkeit durch getrennte Benachrichtigungskanäle</li>
+<li>Deployment-Verlauf über mehrere Dashboards verstreut ohne Korrelation zu Vorfällen</li>
+<li>Neue Teammitglieder brauchen Tage, um zu lernen, welche Workflows wichtig sind</li>
+</ul>
+<h2 id="lösung">Lösung</h2>
+<p>Ich habe das <strong>Automation Dashboard</strong> als Open-Source-Monitoring-Hub konzipiert und entwickelt:</p>
+<ul>
+<li><strong>Einheitliche Pipeline-Ansicht</strong>, die Status von GitHub Actions, GitLab CI und Jenkins über deren APIs aggregiert</li>
+<li><strong>Echtzeit-WebSocket-Updates</strong> für Live-Build-Status ohne Polling</li>
+<li><strong>Umgebungsmatrix</strong> mit Deployment-Status über Dev/Staging/Production</li>
+<li><strong>Smarte Alarmierung</strong> mit konfigurierbaren Schwellenwerten</li>
+<li><strong>Docker-Compose-Deployment</strong> für einfaches Self-Hosting mit PostgreSQL-Backend</li>
+</ul>
+<h2 id="ergebnis">Ergebnis</h2>
+<ul>
+<li>Reduzierung der mittleren Erkennungszeit für Pipeline-Fehler um 80%</li>
+<li>Adoption durch 3 interne Teams im ersten Monat</li>
+<li>Open-Source mit vollständiger Dokumentation — 200+ GitHub-Stars im ersten Quartal</li>
+</ul>
+<h2 id="tech-stack-1">Tech Stack</h2>
+<p>React, TypeScript, Node.js, Express, PostgreSQL, Docker, WebSocket, REST APIs</p>
+</div> </div> </div> <aside class="p-6 lg:p-8" style="background: rgba(255,255,255,.06);"> <div class="font-mono text-xs uppercase tracking-widest text-zinc-500 dark:text-zinc-400 mb-4"> Details </div> <dl class="grid gap-4 text-sm"> <div> <dt class="font-semibold text-zinc-600 dark:text-zinc-400">Date</dt> <dd class="mt-1 font-mono text-zinc-900 dark:text-zinc-200">2025-11-15</dd> </div> <div> <dt class="font-semibold text-zinc-600 dark:text-zinc-400">Links</dt> <dd class="mt-2 grid gap-2"> <a href="https://github.com/username/automation-dashboard" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between rounded-xl border px-3 py-2 transition hover:-translate-y-0.5" style="border-color: rgba(255,255,255,.16); background: rgba(255,255,255,.08);"> <span class="font-semibold">GitHub</span> <span class="font-mono text-xs opacity-70">↗</span> </a><a href="https://demo.example.com" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between rounded-xl border px-3 py-2 transition hover:-translate-y-0.5" style="border-color: rgba(255,255,255,.16); background: rgba(255,255,255,.08);"> <span class="font-semibold">Live Demo</span> <span class="font-mono text-xs opacity-70">↗</span> </a>  </dd> </div> </dl> <div class="mt-10 grid gap-3 border-t pt-5" style="border-color: rgba(255,255,255,.14);">  <a href="/projects/research-tool/" class="rounded-xl border px-4 py-3 text-sm font-semibold transition hover:-translate-y-0.5 text-right" style="border-color: rgba(255,255,255,.16); background: rgba(255,255,255,.08);"> Research Tool →
+</a> </div> </aside> </div> </article> </div>  </main> <footer class="mt-10 pb-10 flex justify-center w-full px-4" role="contentinfo"> <div class="inline-block rounded-2xl px-5 py-3 text-sm font-semibold text-center text-zinc-900 dark:text-zinc-100 bg-white/90 dark:bg-zinc-950/80 border border-zinc-200/70 dark:border-zinc-800/70">
+&copy; 2026 Your Name | All rights reserved <button id="likeBtn" class="likeBtn" type="button" aria-label="Like" title="Like" data-astro-cid-3m57r5gj> <span id="heart" class="heart" aria-hidden="true" data-astro-cid-3m57r5gj>♡</span> <span id="likeCount" class="count" data-astro-cid-3m57r5gj>0</span> <span id="thanks" class="thanks" role="status" aria-live="polite" hidden data-astro-cid-3m57r5gj> Thank you! </span> </button> <script>
+  const likedKey = "liked_site_v1";
+
+  async function initLikeFooter() {
+    const btn = document.getElementById("likeBtn");
+    const countEl = document.getElementById("likeCount");
+    const heartEl = document.getElementById("heart");
+    const thanksEl = document.getElementById("thanks");
+    if (!btn || !countEl || !heartEl || !thanksEl) return;
+
+    const refresh = async () => {
+      const r = await fetch("/api/likes", { cache: "no-store" });
+      const data = await r.json();
+      countEl.textContent = String(data.likes ?? 0);
+      if (localStorage.getItem(likedKey)) heartEl.textContent = "♥";
+    };
+
+    if (!btn.dataset.bound) {
+      btn.addEventListener("click", async () => {
+        if (localStorage.getItem(likedKey)) return;
+
+        btn.classList.add("pop");
+
+        const r = await fetch("/api/like", { method: "POST" });
+        const data = await r.json();
+
+        countEl.textContent = String(data.likes ?? countEl.textContent);
+        localStorage.setItem(likedKey, "1");
+        heartEl.textContent = "♥";
+        thanksEl.hidden = false;
+        thanksEl.classList.add("show");
+
+        setTimeout(() => btn.classList.remove("pop"), 350);
+        setTimeout(() => {
+          thanksEl.classList.remove("show");
+          thanksEl.hidden = true;
+        }, 1600);
+      });
+
+      btn.dataset.bound = "1";
+    }
+
+
+    refresh();
+  }
+
+  document.addEventListener("DOMContentLoaded", initLikeFooter);
+  document.addEventListener("astro:page-load", initLikeFooter);
+</script>  </div> </footer> <script type="module">function i(){const n=document.getElementById("themeBtn");function t(e){document.documentElement.classList.toggle("dark",e==="dark"),localStorage.setItem("theme",e)}function o(){return localStorage.getItem("theme")||"light"}t(o()),n?.addEventListener("click",()=>{const e=document.documentElement.classList.contains("dark");t(e?"light":"dark")})}typeof window<"u"&&(window.initToggles=i);</script> <script type="module">function l(){const n=Array.from(document.querySelectorAll(".spy-link[data-spy]"));if(!n.length)return;const t=n.map(e=>e.getAttribute("data-spy")).filter(Boolean),i=t.map(e=>document.getElementById(e)).filter(Boolean);if(!i.length)return;const o=e=>{n.forEach(s=>s.classList.toggle("is-active",s.getAttribute("data-spy")===e))},r=(location.hash||"").replace("#","");r&&t.includes(r)&&o(r);const g=new IntersectionObserver(e=>{const s=e.filter(c=>c.isIntersecting).sort((c,y)=>(y.intersectionRatio||0)-(c.intersectionRatio||0))[0];s?.target?.id&&o(s.target.id)},{threshold:[.25,.4,.55]});i.forEach(e=>g.observe(e)),window.addEventListener("hashchange",()=>{const e=(location.hash||"").replace("#","");e&&t.includes(e)&&o(e)})}function f(){return document.getElementById("timeline")}function a(n){const t=document.getElementById("journeyToggle");if(!t)return;const i=document.documentElement.lang||"en",o=n?i==="de"?"Weniger anzeigen":"Show less":i==="de"?"Mehr anzeigen":"Show more",r=t.querySelector("span");r?r.textContent=o:t.textContent=o}function d(n){const t=document.getElementById("journeyToggle"),i=f();if(!t||!i)return;const o=Array.from(i.querySelectorAll(".journey-extra"));t.classList.toggle("hidden",o.length===0),o.forEach(r=>r.classList.toggle("hidden",!n)),a(n)}window.__journeyOpen=window.__journeyOpen??!1;function u(){a(window.__journeyOpen),d(window.__journeyOpen)}document.addEventListener("click",n=>{n.target?.closest?.("#journeyToggle")&&(window.__journeyOpen=!window.__journeyOpen,d(window.__journeyOpen))});document.addEventListener("DOMContentLoaded",()=>{l(),u()});document.addEventListener("astro:page-load",()=>{l(),u()});</script> <script>
+      const run = () => window.initToggles?.();
+      document.addEventListener("DOMContentLoaded", run);
+      document.addEventListener("astro:page-load", run);
+    </script> <script>
+      function initMobileMenu() {
+        const btn = document.getElementById("mobileMenuBtn");
+        const menu = document.getElementById("mobileMenu");
+        const iconOpen = document.getElementById("menuIconOpen");
+        const iconClose = document.getElementById("menuIconClose");
+        if (!btn || !menu) return;
+
+        function toggle() {
+          const isOpen = !menu.classList.contains("hidden");
+          menu.classList.toggle("hidden", isOpen);
+          btn.setAttribute("aria-expanded", String(!isOpen));
+          if (iconOpen) iconOpen.classList.toggle("hidden", !isOpen);
+          if (iconClose) iconClose.classList.toggle("hidden", isOpen);
+        }
+
+        function close() {
+          menu.classList.add("hidden");
+          btn.setAttribute("aria-expanded", "false");
+          if (iconOpen) iconOpen.classList.remove("hidden");
+          if (iconClose) iconClose.classList.add("hidden");
+        }
+
+        btn.addEventListener("click", toggle);
+        menu.querySelectorAll("a").forEach(function(a) { a.addEventListener("click", close); });
+      }
+
+      document.addEventListener("DOMContentLoaded", initMobileMenu);
+      document.addEventListener("astro:page-load", initMobileMenu);
+    </script> </body> </html>  <script>
+  (function() {
+    const lightbox = document.getElementById("lightbox");
+    if (!lightbox) return;
+
+    const img = document.getElementById("lightboxImg");
+    const counter = document.getElementById("lightboxCounter");
+    const thumbs = document.querySelectorAll("[data-lightbox-index]");
+    const sources = Array.from(thumbs).map(btn => btn.querySelector("img").src);
+    let current = 0;
+
+    function show(i) {
+      current = i;
+      img.src = sources[current];
+      img.alt = "Screenshot " + (current + 1);
+      if (counter && sources.length > 1) {
+        counter.textContent = (current + 1) + " / " + sources.length;
+      }
+    }
+
+    function open(i) {
+      show(i);
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function close() {
+      lightbox.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    thumbs.forEach(btn => {
+      btn.addEventListener("click", () => open(Number(btn.getAttribute("data-lightbox-index"))));
+    });
+
+    lightbox.querySelector(".lightbox-close").addEventListener("click", close);
+
+    const prevBtn = lightbox.querySelector(".lightbox-prev");
+    const nextBtn = lightbox.querySelector(".lightbox-next");
+    if (prevBtn) prevBtn.addEventListener("click", () => show((current - 1 + sources.length) % sources.length));
+    if (nextBtn) nextBtn.addEventListener("click", () => show((current + 1) % sources.length));
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox || e.target.classList.contains("lightbox-img-wrap")) close();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (lightbox.getAttribute("aria-hidden") !== "false") return;
+      if (e.key === "Escape") close();
+      if (e.key === "ArrowLeft" && sources.length > 1) show((current - 1 + sources.length) % sources.length);
+      if (e.key === "ArrowRight" && sources.length > 1) show((current + 1) % sources.length);
+    });
+  })();
+</script>
