@@ -17,6 +17,7 @@ const {
 
 <script is:inline>
   const likedKey = "liked_site_v1";
+  const countKey = "liked_site_count_v1";
 
   async function initLikeFooter() {
     const btn = document.getElementById("likeBtn");
@@ -25,23 +26,20 @@ const {
     const thanksEl = document.getElementById("thanks");
     if (!btn || !countEl || !heartEl || !thanksEl) return;
 
-    const refresh = async () => {
-      const r = await fetch("/api/likes", { cache: "no-store" });
-      const data = await r.json();
-      countEl.textContent = String(data.likes ?? 0);
+    const refresh = () => {
+      const current = Number(localStorage.getItem(countKey) || "0");
+      countEl.textContent = String(current);
       if (localStorage.getItem(likedKey)) heartEl.textContent = "♥";
     };
 
     if (!btn.dataset.bound) {
-      btn.addEventListener("click", async () => {
+      btn.addEventListener("click", () => {
         if (localStorage.getItem(likedKey)) return;
 
         btn.classList.add("pop");
-
-        const r = await fetch("/api/like", { method: "POST" });
-        const data = await r.json();
-
-        countEl.textContent = String(data.likes ?? countEl.textContent);
+        const next = Number(localStorage.getItem(countKey) || "0") + 1;
+        localStorage.setItem(countKey, String(next));
+        countEl.textContent = String(next);
         localStorage.setItem(likedKey, "1");
         heartEl.textContent = "♥";
         thanksEl.hidden = false;
@@ -56,7 +54,6 @@ const {
 
       btn.dataset.bound = "1";
     }
-
 
     refresh();
   }

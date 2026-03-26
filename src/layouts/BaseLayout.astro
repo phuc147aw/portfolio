@@ -32,6 +32,7 @@ const ogImageURL = new URL(ogImagePath, site).href;
 const alt = getAlternatePath(pathname);
 const enURL = new URL(locale === "vi" ? alt.path : pathname, site).href;
 const viURL = new URL(locale === "vi" ? pathname : alt.path, site).href;
+const base = import.meta.env.BASE_URL;
 
 const t = (en: string, vi: string) => (locale === "vi" ? vi : en);
 const profileName = locale === "vi" ? profile.name.vi : profile.name.en;
@@ -49,7 +50,7 @@ const profileName = locale === "vi" ? profile.name.vi : profile.name.en;
     <link rel="alternate" hreflang="en" href={enURL} />
     <link rel="alternate" hreflang="vi" href={viURL} />
     <link rel="alternate" hreflang="x-default" href={enURL} />
-    <link rel="icon" href="/favico.png" sizes="any" />
+    <link rel="icon" href={`${base}favico.png`} sizes="any" />
 
     <script is:inline>
       // Blocking: apply saved theme before first paint to prevent FOUC
