@@ -1,96 +1,82 @@
 ---
-title: "Research Tool"
-description: "Developed an academic literature management tool with automated citation extraction, PDF annotation, and collaborative note-taking for research teams."
+title: "Speech-to-Text Conversion System"
+description: "Developed a speech recognition system using Conformer architecture with a TensorFlow training and evaluation pipeline for stable and accurate speech-to-text conversion."
 pid: 2
-date: 2025-08-20
-title_de: "Forschungstool"
-description_de: "Ein akademisches Literaturverwaltungstool mit automatischer Zitationsextraktion, PDF-Annotation und kollaborativer Notizfunktion für Forschungsteams entwickelt."
-slug: "research-tool"
+date: 2025-01-01
+title_vi: "Hệ thống chuyển đổi giọng nói thành văn bản"
+description_vi: "Phát triển hệ thống nhận dạng giọng nói sử dụng kiến trúc Conformer cùng pipeline huấn luyện và đánh giá bằng TensorFlow để chuyển đổi giọng nói thành văn bản ổn định và chính xác."
+slug: "speech-to-text-conversion-system"
 ready: true
 featured: false
-tags: ["Python", "NLP", "PostgreSQL", "FastAPI", "Research"]
+tags: ["Python", "TensorFlow", "Conformer", "ASR", "Speech Recognition"]
 category: "research"
-image: "/images/projects/research-tool/logo.png"
-# coverImage: "/images/projects/research-tool/cover.png"
-# gallery:
-#   - "/images/projects/research-tool/screenshot-1.png"
 links:
   - label: "GitHub"
-    url: "https://github.com/username/research-tool"
+    url: "https://github.com/phuc147aw/KL_ASR"
 ---
 
 <div class="lang-en">
 
 ## Context
 
-Academic researchers juggle hundreds of papers across multiple devices and tools. Existing reference managers focus on citation formatting but lack the ability to extract insights, connect related concepts, and collaborate on annotations in real time.
+This project focused on automatic speech recognition and model training workflows. The objective was to build a system that could convert spoken audio into text while maintaining stable performance and good recognition quality.
 
 ## Problem
 
-- Researchers spend 30% of their time on literature management instead of actual research
-- PDF annotations are trapped in individual tools with no cross-paper linking
-- Citation extraction from PDFs is error-prone and requires manual correction
-- No simple way to share annotated reading lists with lab members
+- Speech data requires careful preprocessing before it can be used for training
+- Recognition quality depends heavily on both model architecture and experiment setup
+- Building a repeatable training and evaluation pipeline is necessary for improving results
 
 ## Solution
 
-I built **Research Tool** as a lightweight, self-hostable literature management platform:
+I developed **Speech-to-Text Conversion System** around a modern ASR workflow:
 
-- **Automated citation extraction** using NLP to parse references from uploaded PDFs with 95%+ accuracy
-- **Smart PDF viewer** with inline annotations that sync across devices
-- **Knowledge graph** connecting papers by shared references, authors, and topics
-- **Collaborative workspaces** where lab members can share annotations and reading lists
-- **FastAPI backend** with PostgreSQL for fast full-text search across all papers and notes
-- **BibTeX/RIS export** for seamless integration with LaTeX and Word
-
-Key decisions:
-- Used spaCy + custom NER models for citation extraction instead of regex — handles diverse citation styles
-- Built the viewer as a Progressive Web App for offline reading support
-- Chose PostgreSQL's full-text search over Elasticsearch to reduce infrastructure complexity
+- Used **Conformer architecture** for speech recognition modeling
+- Built a **training and evaluation pipeline with TensorFlow**
+- Processed and prepared audio datasets for model training
+- Ran experiments to improve model accuracy and system stability
 
 ## Outcome
 
-- Used by 2 research groups (15 researchers) during a full academic semester
-- Reduced literature review setup time from days to hours
-- Citation extraction accuracy of 96.3% across tested papers
-- Positive feedback on collaborative annotation workflow — adopted as lab standard
+- Built a working speech recognition pipeline from data preparation to evaluation
+- Achieved high accuracy with stable performance
+- Improved my skills in deep learning workflows, audio data processing, and ASR experimentation
 
 ## Tech Stack
 
-Python, FastAPI, spaCy, PostgreSQL, React, PDF.js, Docker
+Python, TensorFlow, Conformer, ASR
 
 </div>
 
-<div class="lang-de">
+<div class="lang-vi">
 
-## Kontext
+## Bối cảnh
 
-Akademische Forscher jonglieren Hunderte von Artikeln über mehrere Geräte und Tools. Bestehende Referenzmanager konzentrieren sich auf Zitationsformatierung, bieten aber keine Möglichkeit, Erkenntnisse zu extrahieren, verwandte Konzepte zu verknüpfen und Annotationen in Echtzeit zu teilen.
+Dự án này tập trung vào bài toán nhận dạng giọng nói tự động và quy trình huấn luyện mô hình. Mục tiêu là xây dựng hệ thống có thể chuyển đổi âm thanh thành văn bản với độ ổn định tốt và chất lượng nhận dạng cao.
 
-## Problem
+## Vấn đề
 
-- Forscher verbringen 30% ihrer Zeit mit Literaturverwaltung statt mit Forschung
-- PDF-Annotationen sind in einzelnen Tools eingeschlossen ohne paper-übergreifende Verknüpfung
-- Zitationsextraktion aus PDFs ist fehleranfällig und erfordert manuelle Korrekturen
-- Keine einfache Möglichkeit, annotierte Leselisten mit Labormitgliedern zu teilen
+- Dữ liệu giọng nói cần được tiền xử lý cẩn thận trước khi đem đi huấn luyện
+- Chất lượng nhận dạng phụ thuộc nhiều vào kiến trúc mô hình và cách thiết kế thí nghiệm
+- Cần có pipeline huấn luyện và đánh giá lặp lại được để cải thiện kết quả một cách có hệ thống
 
-## Lösung
+## Giải pháp
 
-Ich habe das **Research Tool** als leichtgewichtige, self-hostbare Literaturverwaltungsplattform entwickelt:
+Mình phát triển **Speech-to-Text Conversion System** dựa trên workflow ASR hiện đại:
 
-- **Automatische Zitationsextraktion** mittels NLP zum Parsen von Referenzen aus hochgeladenen PDFs mit 95%+ Genauigkeit
-- **Smarter PDF-Viewer** mit Inline-Annotationen, die geräteübergreifend synchronisieren
-- **Wissensgraph** zur Verknüpfung von Papern über gemeinsame Referenzen, Autoren und Themen
-- **Kollaborative Arbeitsbereiche** zum Teilen von Annotationen und Leselisten
+- Sử dụng **kiến trúc Conformer** cho bài toán nhận dạng giọng nói
+- Xây dựng **pipeline huấn luyện và đánh giá bằng TensorFlow**
+- Xử lý và chuẩn bị bộ dữ liệu âm thanh phục vụ huấn luyện
+- Thực hiện nhiều thí nghiệm để cải thiện độ chính xác và độ ổn định của mô hình
 
-## Ergebnis
+## Kết quả
 
-- Von 2 Forschungsgruppen (15 Forschern) während eines vollen akademischen Semesters genutzt
-- Literatur-Review-Einrichtungszeit von Tagen auf Stunden reduziert
-- Zitationsextraktionsgenauigkeit von 96,3% über getestete Paper
+- Xây dựng được pipeline nhận dạng giọng nói hoàn chỉnh từ tiền xử lý dữ liệu đến đánh giá
+- Đạt độ chính xác tốt cùng hiệu năng ổn định
+- Nâng cao kỹ năng về deep learning workflow, xử lý dữ liệu âm thanh và thực nghiệm ASR
 
 ## Tech Stack
 
-Python, FastAPI, spaCy, PostgreSQL, React, PDF.js, Docker
+Python, TensorFlow, Conformer, ASR
 
 </div>

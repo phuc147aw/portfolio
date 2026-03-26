@@ -4,14 +4,14 @@
   "version": "0.0.1",
   "description": "A modern, production-ready portfolio theme built with Astro 5, Tailwind CSS 4, and Content Collections.",
   "license": "MIT",
-  "author": "Mohammed Aljer",
+  "author": "Dang Thanh Phuc",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Mohammedaljer/astro-portfolio-template.git"
+    "url": "https://github.com/phuc147aw/portfolio.git"
   },
-  "homepage": "https://github.com/Mohammedaljer/astro-portfolio-template",
+  "homepage": "https://phuc147aw.github.io/portfolio/",
   "bugs": {
-    "url": "https://github.com/Mohammedaljer/astro-portfolio-template/issues"
+    "url": "https://github.com/phuc147aw/portfolio/issues"
   },
   "keywords": [
     "astro",

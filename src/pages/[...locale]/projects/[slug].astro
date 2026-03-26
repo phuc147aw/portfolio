@@ -3,6 +3,7 @@
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import { localePath } from "../../../utils/i18n";
+import { profile } from "../../../data/cv.js";
 
 export async function getStaticPaths() {
   const cleanSlug = (v) =>
@@ -22,7 +23,7 @@ export async function getStaticPaths() {
     const next = i < sorted.length - 1 ? sorted[i + 1] : null;
 
     paths.push({ params: { locale: undefined, slug }, props: { entry, prev, next } });
-    paths.push({ params: { locale: "de", slug }, props: { entry, prev, next } });
+    paths.push({ params: { locale: "vi", slug }, props: { entry, prev, next } });
   }
   return paths;
 }
@@ -34,7 +35,7 @@ const cleanSlugLocal = (v) =>
     .replace(/\.mdx?$/i, "");
 
 const locale = (Astro.params.locale as string) || "en";
-const t = (en: string, de: string) => (locale === "de" ? de : en);
+const t = (en: string, vi: string) => (locale === "vi" ? vi : en);
 
 const { entry, prev, next } = Astro.props;
 const { Content } = await entry.render();
@@ -44,8 +45,9 @@ const logo = entry.data.image;
 const gallery = entry.data.gallery ?? [];
 const hasCover = !!cover;
 const dateStr = entry.data.date?.toISOString().slice(0, 10) ?? "Unknown";
-const title = locale === "de" ? (entry.data.title_de || entry.data.title) : entry.data.title;
-const description = locale === "de" ? (entry.data.description_de || entry.data.description) : entry.data.description;
+const title = locale === "vi" ? (entry.data.title_vi || entry.data.title) : entry.data.title;
+const description = locale === "vi" ? (entry.data.description_vi || entry.data.description) : entry.data.description;
+const profileName = locale === "vi" ? profile.name.vi : profile.name.en;
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -53,11 +55,11 @@ const jsonLd = {
   name: title,
   description,
   dateCreated: dateStr,
-  author: { "@type": "Person", name: "Your Name", url: Astro.site?.href ?? "https://example.com" },
+  author: { "@type": "Person", name: profileName, url: Astro.site?.href ?? "https://example.com" },
 };
 ---
 
-<BaseLayout title={`${title} • ${t("Project", "Projekt")}`} description={description} showNavigation={false} locale={locale} jsonLd={jsonLd}>
+<BaseLayout title={`${title} • ${t("Project", "Dự án")}`} description={description} showNavigation={false} locale={locale} jsonLd={jsonLd}>
   <div class="mx-auto max-w-6xl">
     <nav class="mb-6 flex items-center justify-between px-2">
       <a
@@ -65,7 +67,7 @@ const jsonLd = {
         class="group flex items-center gap-2 text-sm font-semibold text-zinc-700 transition hover:opacity-80 dark:text-zinc-300"
       >
         <span class="rounded bg-white/30 px-1.5 py-0.5 font-mono text-xs dark:bg-zinc-800/70">←</span>
-        <span>{t("Back", "Zurück")}</span>
+        <span>{t("Back", "Quay lại")}</span>
       </a>
 
       <div class="font-mono text-xs text-zinc-500 dark:text-zinc-400">
@@ -103,7 +105,7 @@ const jsonLd = {
           </div>
         ) : (
           <div class="detail-hero-empty">
-            <span class="font-mono text-sm opacity-40">{t("NO_PREVIEW", "KEINE_VORSCHAU")}</span>
+            <span class="font-mono text-sm opacity-40">{t("NO_PREVIEW", "KHÔNG_CÓ_XEM_TRƯỚC")}</span>
           </div>
         )}
       </div>
@@ -162,7 +164,7 @@ const jsonLd = {
         <div class="p-6 md:p-10">
           <div class="prose prose-zinc max-w-none dark:prose-invert prose-a:no-underline hover:prose-a:underline prose-lead:text-base prose-lead:font-normal">
             <h3 class="font-mono text-xs uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
-              {t("Description", "Beschreibung")}
+              {t("Description", "Mô tả")}
             </h3>
 
             <p class="lead">{description}</p>
@@ -179,7 +181,7 @@ const jsonLd = {
 
           <dl class="grid gap-4 text-sm">
             <div>
-              <dt class="font-semibold text-zinc-600 dark:text-zinc-400">{t("Date", "Datum")}</dt>
+              <dt class="font-semibold text-zinc-600 dark:text-zinc-400">{t("Date", "Ngày")}</dt>
               <dd class="mt-1 font-mono text-zinc-900 dark:text-zinc-200">{dateStr}</dd>
             </div>
 
@@ -200,7 +202,7 @@ const jsonLd = {
                 ))}
                 {(entry.data.links ?? []).length === 0 ? (
                   <span class="font-mono text-xs opacity-60">
-                    {t("No external links", "Keine externen Links")}
+                    {t("No external links", "Không có liên kết ngoài")}
                   </span>
                 ) : null}
               </dd>
@@ -214,7 +216,7 @@ const jsonLd = {
                 class="rounded-xl border px-4 py-3 text-sm font-semibold transition hover:-translate-y-0.5"
                 style="border-color: rgba(255,255,255,.16); background: rgba(255,255,255,.08);"
               >
-                ← {locale === "de" ? (prev.data.title_de || prev.data.title) : prev.data.title}
+                ← {locale === "vi" ? (prev.data.title_vi || prev.data.title) : prev.data.title}
               </a>
             ) : null}
 
@@ -224,7 +226,7 @@ const jsonLd = {
                 class="rounded-xl border px-4 py-3 text-sm font-semibold transition hover:-translate-y-0.5 text-right"
                 style="border-color: rgba(255,255,255,.16); background: rgba(255,255,255,.08);"
               >
-                {locale === "de" ? (next.data.title_de || next.data.title) : next.data.title} →
+                {locale === "vi" ? (next.data.title_vi || next.data.title) : next.data.title} →
               </a>
             ) : null}
           </div>

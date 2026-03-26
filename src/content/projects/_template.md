@@ -11,8 +11,8 @@ pid: 99                       # Unique project ID — increment from the highest
 date: 2026-01-01              # ISO date — when the project was completed or published
 
 # ── Bilingual (optional but recommended) ───────────────────────
-title_de: "Projekttitel"
-description_de: "Ein Satz (120–180 Zeichen). Mit einem Verb beginnen. Zusammenfassen, was gebaut wurde und warum es relevant ist."
+title_vi: "Tiêu đề dự án"
+description_vi: "Một câu ngắn (120–180 ký tự). Hãy bắt đầu bằng động từ và tóm tắt bạn đã xây gì, vì sao nó quan trọng."
 
 # ── Slug & display ─────────────────────────────────────────────
 slug: "project-title"         # URL-safe slug — used in /projects/<slug>/
@@ -156,7 +156,7 @@ I designed and built **Project Name** to solve this:
 <!-- ════════════════════════════════════════════════════════════
      GERMAN CONTENT
      ════════════════════════════════════════════════════════════ -->
-<div class="lang-de">
+<div class="lang-vi">
 
 ## Kontext
 <!-- 2–4 Sätze. Was ist dieses Projekt? Welches Umfeld oder Bedürfnis adressiert es? -->
@@ -195,7 +195,7 @@ Ich habe **Projektname** konzipiert und entwickelt:
 <!-- ## Architektur -->
 
 <!-- ## Screenshots
-     ![Beschreibung](/images/projects/<slug>/my-screenshot.png)
+     ![Mô tả](/images/projects/<slug>/my-screenshot.png)
 
      <figure>
        <img src="/images/projects/<slug>/dashboard.png" alt="Dashboard-Übersicht" />

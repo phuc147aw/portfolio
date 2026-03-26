@@ -2,12 +2,12 @@
 
 /**
  * Returns a locale-prefixed path.
- * English (default) has no prefix; German gets /de prefix.
+ * English (default) has no prefix; Vietnamese gets /vi prefix.
  */
 export function localePath(path: string, locale: string): string {
   const clean = path.startsWith("/") ? path : `/${path}`;
-  if (locale === "de") {
-    return clean === "/" ? "/de/" : `/de${clean}`;
+  if (locale === "vi") {
+    return clean === "/" ? "/vi/" : `/vi${clean}`;
   }
   return clean;
 }
@@ -16,8 +16,8 @@ export function localePath(path: string, locale: string): string {
  * Returns the alternate locale URL path for the given path.
  */
 export function getAlternatePath(currentPath: string): { path: string; locale: string } {
-  if (currentPath.startsWith("/de/") || currentPath === "/de") {
-    return { path: currentPath.replace(/^\/de/, "") || "/", locale: "en" };
+  if (currentPath.startsWith("/vi/") || currentPath === "/vi") {
+    return { path: currentPath.replace(/^\/vi/, "") || "/", locale: "en" };
   }
-  return { path: currentPath === "/" ? "/de/" : `/de${currentPath}`, locale: "de" };
+  return { path: currentPath === "/" ? "/vi/" : `/vi${currentPath}`, locale: "vi" };
 }

@@ -3,10 +3,11 @@ import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  site: "https://example.com",
+  site: "https://phuc147aw.github.io",
+  base: "/portfolio",
   i18n: {
     defaultLocale: "en",
-    locales: ["en", "de"],
+    locales: ["en", "vi"],
     routing: { prefixDefaultLocale: false },
   },
   vite: {

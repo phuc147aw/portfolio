@@ -4,9 +4,9 @@ const projects = defineCollection({
   schema: z.object({
     pid: z.number().int().positive(),
     title: z.string(),
-    title_de: z.string().optional(),
+    title_vi: z.string().optional(),
     description: z.string(),
-    description_de: z.string().optional(),
+    description_vi: z.string().optional(),
     tags: z.array(z.string()).default([]),
     category: z.enum([
       "automation",

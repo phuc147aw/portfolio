@@ -3,8 +3,8 @@ title: "Example Project — Full Template"
 description: "A fully filled-out project example showing all available frontmatter fields and content structure. Copy this file to start a new project."
 pid: 99
 date: 2026-01-15
-title_de: "Beispielprojekt — Vollständige Vorlage"
-description_de: "Ein vollständig ausgefülltes Projektbeispiel mit allen verfügbaren Frontmatter-Feldern und Inhaltsstruktur. Kopiere diese Datei, um ein neues Projekt zu starten."
+title_vi: "Dự án ví dụ — Mẫu hoàn chỉnh"
+description_vi: "Một ví dụ dự án được điền đầy đủ với toàn bộ frontmatter và cấu trúc nội dung có sẵn. Hãy sao chép file này để bắt đầu dự án mới."
 slug: "example-project"
 ready: false
 featured: true
@@ -65,7 +65,7 @@ React, TypeScript, Node.js, PostgreSQL, Docker
 
 </div>
 
-<div class="lang-de">
+<div class="lang-vi">
 
 ## Kontext
 
@@ -81,7 +81,7 @@ Welche konkrete Herausforderung löst dieses Projekt? Beschreibe Painpoints und 
 
 ## Lösung
 
-Ich habe das **Beispielprojekt** entworfen und entwickelt:
+Mình thiết kế và xây dựng **dự án ví dụ** như sau:
 
 - **Feature eins** — Kurze Erklärung
 - **Feature zwei** — Architekturentscheidung und Nutzen

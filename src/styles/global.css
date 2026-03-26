@@ -3,9 +3,9 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* Language visibility based on html[lang] */
-html[lang="de"] .lang-en { display: none !important; }
-html[lang="en"] .lang-de,
-html:not([lang="de"]) .lang-de { display: none !important; }
+html[lang="vi"] .lang-en { display: none !important; }
+html[lang="en"] .lang-vi,
+html:not([lang="vi"]) .lang-vi { display: none !important; }
 
 
 

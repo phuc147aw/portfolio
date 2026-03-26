@@ -7,12 +7,12 @@ import { localePath } from "../../../utils/i18n";
 export function getStaticPaths() {
   return [
     { params: { locale: undefined } },
-    { params: { locale: "de" } },
+    { params: { locale: "vi" } },
   ];
 }
 
 const locale = (Astro.params.locale as string) || "en";
-const t = (en: string, de: string) => (locale === "de" ? de : en);
+const t = (en: string, vi: string) => (locale === "vi" ? vi : en);
 
 const allProjects = await getCollection("projects");
 const projects = allProjects.filter((p) => p.data.ready !== false);
@@ -29,14 +29,14 @@ const toSlug = (p) =>
     .replace(/\.mdx?$/i, "");
 
 const categories = [...new Set(projects.map((p) => p.data.category ?? "other"))].sort();
-const categoryLabels: Record<string, { en: string; de: string }> = {
-  automation: { en: "Automation", de: "Automatisierung" },
-  tooling: { en: "Tooling", de: "Tooling" },
-  "open-source": { en: "Open Source", de: "Open Source" },
-  integration: { en: "Integration", de: "Integration" },
-  research: { en: "Research", de: "Forschung" },
-  "self-hosted": { en: "Self-Hosted", de: "Self-Hosted" },
-  other: { en: "Other", de: "Sonstiges" },
+const categoryLabels: Record<string, { en: string; vi: string }> = {
+  automation: { en: "Automation", vi: "Automation" },
+  tooling: { en: "Tooling", vi: "Tooling" },
+  "open-source": { en: "Open Source", vi: "Open Source" },
+  integration: { en: "Integration", vi: "Integration" },
+  research: { en: "Research", vi: "Research" },
+  "self-hosted": { en: "Self-Hosted", vi: "Self-Hosted" },
+  other: { en: "Other", vi: "Other" },
 };
 
 const toneOf = (tags) => {
@@ -47,7 +47,7 @@ const toneOf = (tags) => {
 };
 ---
 
-<BaseLayout title={t("Projects", "Projekte")} showNavigation={false} locale={locale}>
+<BaseLayout title={t("Projects", "Dự án")} showNavigation={false} locale={locale}>
   <section
     class="archive-shell relative w-full rounded-[32px] border p-6 md:p-10 overflow-hidden"
     style="background: var(--glass); border-color: var(--glass-border);"
@@ -77,20 +77,20 @@ const toneOf = (tags) => {
         <div class="flex items-center gap-3">
           <span class="signal-dot" aria-hidden="true"></span>
           <span class="font-mono text-[11px] uppercase tracking-[0.22em] text-zinc-500 dark:text-zinc-400">
-            {t("Projects", "Projekte")}
+            {t("Projects", "Dự án")}
           </span>
         </div>
 
         <h1 class="mt-3 text-4xl md:text-5xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
-          {t("My Work", "Meine Arbeit")}
+          {t("My Work", "Các dự án của mình")}
         </h1>
 
         <p class="mt-3 text-base text-zinc-600 dark:text-zinc-400">
-          {t("Projects, experiments, and open-source contributions — built to ship.", "Projekte, Experimente und Open-Source-Beiträge — gebaut zum Ausliefern.")}
+          {t("Projects, experiments, and open-source contributions — built to ship.", "Các dự án, thử nghiệm và đóng góp mã nguồn mở — tập trung vào sản phẩm có thể triển khai thực tế.")}
         </p>
       </div>
 
-      <a href={localePath("/", locale)} class="return-btn">{t("← Home", "← Startseite")}</a>
+      <a href={localePath("/", locale)} class="return-btn">{t("← Home", "← Trang chủ")}</a>
     </header>
 
     {/* ── Category filter ─────────────────── */}
@@ -100,7 +100,7 @@ const toneOf = (tags) => {
         class="cat-btn cat-btn--active"
         type="button"
       >
-        {t("All", "Alle")}
+        {t("All", "Tất cả")}
       </button>
       {categories.map((cat) => (
         <button
@@ -122,8 +122,8 @@ const toneOf = (tags) => {
         const tagsStr = (p.data.tags ?? []).map((tg) => String(tg).toLowerCase()).join("|");
         const gallery = p.data.gallery ?? [];
         const hasCover = !!cover;
-        const titleLocal = locale === "de" ? (p.data.title_de || p.data.title) : p.data.title;
-        const descLocal = locale === "de" ? (p.data.description_de || p.data.description) : p.data.description;
+        const titleLocal = locale === "vi" ? (p.data.title_vi || p.data.title) : p.data.title;
+        const descLocal = locale === "vi" ? (p.data.description_vi || p.data.description) : p.data.description;
         const isFeatured = !!p.data.featured;
         const cat = p.data.category ?? "other";
         const catLabel = categoryLabels[cat]?.[locale] ?? cat;
@@ -168,7 +168,7 @@ const toneOf = (tags) => {
                   />
                 ) : (
                   <div class="media-empty">
-                    <div class="font-mono text-xs opacity-60">{t("NO_PREVIEW", "KEINE_VORSCHAU")}</div>
+                    <div class="font-mono text-xs opacity-60">{t("NO_PREVIEW", "KHÔNG_CÓ_XEM_TRƯỚC")}</div>
                   </div>
                 )}
 
@@ -179,7 +179,7 @@ const toneOf = (tags) => {
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                       <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                     </svg>
-                    <span>{t("Featured", "Empfohlen")}</span>
+                    <span>{t("Featured", "Nổi bật")}</span>
                   </div>
                 )}
               </div>
@@ -207,7 +207,7 @@ const toneOf = (tags) => {
 
                 <div class="mt-4 flex items-center justify-between gap-3">
                   <span class="text-sm font-semibold text-zinc-800 dark:text-zinc-200 group-hover:underline">
-                    {t("View details →", "Details ansehen →")}
+                    {t("View details →", "Xem chi tiết →")}
                   </span>
 
                   {(p.data.links?.[0]?.url) ? (
