@@ -3,8 +3,7 @@ import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  site: "https://phuc147aw.github.io",
-  base: "/portfolio",
+  site: "https://phucdang.top",
   i18n: {
     defaultLocale: "en",
     locales: ["en", "vi"],
