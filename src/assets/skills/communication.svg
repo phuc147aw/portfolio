@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="communicationTitle">
+  <title id="communicationTitle">Communication</title>
+  <g fill="none" fill-rule="evenodd">
+    <path
+      d="M17 18h18c5.523 0 10 4.477 10 10v1c0 5.523-4.477 10-10 10H24l-8 6v-6h-1c-5.523 0-10-4.477-10-10v-1c0-5.523 4.477-10 10-10Z"
+      fill="#E8FFF6"
+      stroke="#0F172A"
+      stroke-linejoin="round"
+      stroke-width="3"
+    />
+    <path
+      d="M41 23h8c5.523 0 10 4.477 10 10v1c0 5.523-4.477 10-10 10h-1v5l-7-5h-7c-5.523 0-10-4.477-10-10v-1"
+      fill="#DBEAFE"
+      stroke="#0F172A"
+      stroke-linejoin="round"
+      stroke-width="3"
+    />
+    <circle cx="21" cy="29" r="2.5" fill="#10B981" />
+    <circle cx="28" cy="29" r="2.5" fill="#10B981" />
+    <circle cx="35" cy="29" r="2.5" fill="#10B981" />
+    <circle cx="39" cy="34" r="2.5" fill="#3B82F6" />
+    <circle cx="46" cy="34" r="2.5" fill="#3B82F6" />
+  </g>
+</svg>

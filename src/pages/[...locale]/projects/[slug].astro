@@ -34,15 +34,23 @@ const cleanSlugLocal = (v) =>
     .replace(/\/+$/g, "")
     .replace(/\.mdx?$/i, "");
 
+const withBase = (src?: string) => {
+  if (!src) return undefined;
+  if (/^(https?:)?\/\//i.test(src)) return src;
+  const base = String(import.meta.env.BASE_URL || "/");
+  const normalizedBase = base.endsWith("/") ? base : `${base}/`;
+  return `${normalizedBase}${src.replace(/^\/+/, "")}`;
+};
+
 const locale = (Astro.params.locale as string) || "en";
 const t = (en: string, vi: string) => (locale === "vi" ? vi : en);
 
 const { entry, prev, next } = Astro.props;
 const { Content } = await entry.render();
 
-const cover = entry.data.coverImage;
-const logo = entry.data.image;
-const gallery = entry.data.gallery ?? [];
+const cover = withBase(entry.data.coverImage);
+const logo = withBase(entry.data.image);
+const gallery = (entry.data.gallery ?? []).map((src) => withBase(src)).filter(Boolean);
 const hasCover = !!cover;
 const dateStr = entry.data.date?.toISOString().slice(0, 10) ?? "Unknown";
 const title = locale === "vi" ? (entry.data.title_vi || entry.data.title) : entry.data.title;

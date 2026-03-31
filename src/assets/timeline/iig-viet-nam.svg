@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="IIG Viet Nam">
+  <rect width="128" height="128" rx="24" fill="#ffffff"/>
+  <path d="M22 34h16L28 80H12z" fill="#6ea52a"/>
+  <path d="M46 34h16L52 80H36z" fill="#f58a1f"/>
+  <path d="M105 40c-5-5-12-8-21-8-21 0-36 15-36 33 0 17 12 31 31 31 15 0 28-7 34-18H89c-4 3-8 5-15 5-9 0-16-6-16-14h55c1-12-2-22-8-29zM60 58c2-7 9-12 18-12 5 0 9 1 12 4 2 2 4 5 4 8z" fill="#0d4fa8"/>
+  <path d="M92 52h20l-3 12H89z" fill="#0d4fa8"/>
+  <text x="64" y="108" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#0d4fa8">IIG VIET NAM</text>
+</svg>

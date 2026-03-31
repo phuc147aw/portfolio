@@ -45,6 +45,14 @@ const toneOf = (tags) => {
   if (tArr.includes("lab") || tArr.includes("prototype")) return "tone-a3";
   return "tone-a1";
 };
+
+const withBase = (src?: string) => {
+  if (!src) return undefined;
+  if (/^(https?:)?\/\//i.test(src)) return src;
+  const base = String(import.meta.env.BASE_URL || "/");
+  const normalizedBase = base.endsWith("/") ? base : `${base}/`;
+  return `${normalizedBase}${src.replace(/^\/+/, "")}`;
+};
 ---
 
 <BaseLayout title={t("Projects", "Dự án")} showNavigation={false} locale={locale}>
@@ -115,12 +123,12 @@ const toneOf = (tags) => {
 
     <div id="projectsGrid" class="relative z-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {sorted.map((p) => {
-        const cover = p.data.coverImage;
-        const logo = p.data.image;
+        const cover = withBase(p.data.coverImage);
+        const logo = withBase(p.data.image);
         const slug = toSlug(p);
         const tone = toneOf(p.data.tags);
         const tagsStr = (p.data.tags ?? []).map((tg) => String(tg).toLowerCase()).join("|");
-        const gallery = p.data.gallery ?? [];
+        const gallery = (p.data.gallery ?? []).map((src) => withBase(src)).filter(Boolean);
         const hasCover = !!cover;
         const titleLocal = locale === "vi" ? (p.data.title_vi || p.data.title) : p.data.title;
         const descLocal = locale === "vi" ? (p.data.description_vi || p.data.description) : p.data.description;

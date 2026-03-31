@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="teamworkTitle">
+  <title id="teamworkTitle">Teamwork</title>
+  <g fill="none" fill-rule="evenodd">
+    <circle cx="32" cy="13" r="6" fill="#60A5FA" stroke="#0F172A" stroke-width="3" />
+    <circle cx="17" cy="43" r="6" fill="#34D399" stroke="#0F172A" stroke-width="3" />
+    <circle cx="47" cy="43" r="6" fill="#F472B6" stroke="#0F172A" stroke-width="3" />
+    <path d="M32 22v12" stroke="#0F172A" stroke-linecap="round" stroke-width="3" />
+    <path d="M23 38l6-5h6l6 5" stroke="#0F172A" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
+    <path d="M22 26c3-4 6-6 10-6s7 2 10 6" stroke="#0F172A" stroke-linecap="round" stroke-width="3" />
+    <path d="M17 37c4-3 8-4 15-4s11 1 15 4" stroke="#0F172A" stroke-linecap="round" stroke-width="3" />
+    <path d="M17 31c2.8 0 5 2.2 5 5v8H12v-8c0-2.8 2.2-5 5-5Z" fill="#ECFDF5" stroke="#0F172A" stroke-width="3" />
+    <path d="M47 31c2.8 0 5 2.2 5 5v8H42v-8c0-2.8 2.2-5 5-5Z" fill="#FDF2F8" stroke="#0F172A" stroke-width="3" />
+    <path d="M32 20c3.314 0 6 2.686 6 6v8H26v-8c0-3.314 2.686-6 6-6Z" fill="#EFF6FF" stroke="#0F172A" stroke-width="3" />
+  </g>
+</svg>

@@ -48,6 +48,14 @@ const getTimelineImage = (name) => {
   return hitKey ? timelineImages[hitKey] : null;
 };
 
+const withBase = (src?: string) => {
+  if (!src) return undefined;
+  if (/^(https?:)?\/\//i.test(src)) return src;
+  const base = String(import.meta.env.BASE_URL || "/");
+  const normalizedBase = base.endsWith("/") ? base : `${base}/`;
+  return `${normalizedBase}${src.replace(/^\/+/, "")}`;
+};
+
 const tl = locale === "vi" ? timeline.vi : timeline.en;
 const vol = locale === "vi" ? volunteering.vi : volunteering.en;
 const langs = locale === "vi" ? languages.vi : languages.en;
@@ -179,7 +187,7 @@ const jsonLd = {
   >
     <div class="mb-8">
       <h2 class="text-lg font-semibold break-words">{t("Journey", "Hành trình")}</h2>
-      <div class="text-xs text-zinc-700 dark:text-zinc-300 break-words">{t("Work", "Công việc")}</div>
+      <div class="text-xs text-zinc-700 dark:text-zinc-300 break-words">{t("Work • Education", "Công việc • Học tập")}</div>
     </div>
 
     <div id="timeline" class="relative border-l border-zinc-200 dark:border-zinc-800 ml-3 md:ml-4 space-y-10">
@@ -226,6 +234,10 @@ const jsonLd = {
     </div>
   </section>
 
+  <div class="section-connector-box reveal-item" data-reveal data-delay="100">
+    <div class="connector-light"></div>
+  </div>
+
   <SkillsWorkflow locale={locale} />
 
   <div class="section-connector-box reveal-item" data-reveal data-delay="100">
@@ -243,8 +255,8 @@ const jsonLd = {
     </div>
 
     {latest ? (() => {
-      const latestCover = latest.data.coverImage;
-      const latestLogo = latest.data.image;
+      const latestCover = withBase(latest.data.coverImage);
+      const latestLogo = withBase(latest.data.image);
       const latestHasCover = !!latestCover;
       return (
         <div class="mt-5 grid gap-6 md:grid-cols-[1fr_1.2fr] items-start reveal-item" data-reveal data-delay="120">

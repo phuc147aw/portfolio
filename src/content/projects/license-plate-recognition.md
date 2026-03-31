@@ -1,15 +1,20 @@
 ---
 title: "License Plate Recognition"
-description: "Developed an automatic license plate recognition system using deep learning, OpenCV, YOLOv8, and OCR for real-time plate detection and text extraction."
+description: "Developed an automatic license plate recognition system using deep learning, YOLOv8, OpenCV, and OCR for real-time plate detection and text extraction."
 pid: 1
 date: 2024-07-01
 title_vi: "Nhận diện biển số xe"
-description_vi: "Phát triển hệ thống nhận diện biển số xe tự động bằng deep learning, OpenCV, YOLOv8 và OCR để phát hiện và trích xuất ký tự theo thời gian thực."
+description_vi: "Phát triển hệ thống nhận diện biển số xe tự động bằng deep learning, YOLOv8, OpenCV và OCR để phát hiện và trích xuất ký tự theo thời gian thực."
 slug: "license-plate-recognition"
 ready: true
 featured: true
 tags: ["Python", "YOLOv8", "Tesseract OCR", "OpenCV", "Deep Learning"]
 category: "research"
+coverImage: "/images/projects/license-plate-recognition/cover.png"
+gallery:
+  - "/images/projects/license-plate-recognition/screenshot-1.png"
+  - "/images/projects/license-plate-recognition/screenshot-2.png"
+  - "/images/projects/license-plate-recognition/screenshot-3.png"
 links:
   - label: "GitHub"
     url: "https://github.com/phuc147aw/RPL_Yolov8"
@@ -19,28 +24,28 @@ links:
 
 ## Context
 
-This project was built to apply computer vision and deep learning to a real-world recognition task. The goal was to create a system that could automatically detect vehicle license plates from images and extract the plate text with reliable accuracy.
+This project applies computer vision and deep learning to a practical recognition task. The goal was to detect vehicle license plates from images and extract the plate text with a usable level of accuracy.
 
 ## Problem
 
 - Manual plate reading is slow and inconsistent
-- Traditional image processing pipelines struggle in complex lighting and viewing conditions
-- A practical solution needs both accurate detection and readable OCR output
+- Traditional image processing methods struggle under complex lighting and viewing angles
+- A practical solution needs both accurate plate localization and readable OCR output
 
 ## Solution
 
-I developed **License Plate Recognition** as a complete recognition pipeline:
+I built **License Plate Recognition** as a complete recognition pipeline:
 
-- Used **YOLOv8** to detect license plates in input images
-- Built an **image processing workflow with OpenCV** to clean and prepare cropped plates
-- Integrated **Tesseract OCR** for text extraction from the detected plate region
-- Optimized the pipeline for faster execution and more stable real-time processing
+- Used **YOLOv8** to detect license plates in the input image
+- Processed the cropped plate region with **OpenCV** before text extraction
+- Applied **Tesseract OCR** to read plate characters
+- Built a demo flow for image upload, plate highlighting, and result display
 
 ## Outcome
 
 - Achieved over **85% recognition accuracy**
-- Built a complete end-to-end workflow from detection to text extraction
-- Strengthened my practical skills in Python, computer vision, model integration, and optimization
+- Completed an end-to-end pipeline from detection to OCR output
+- Added a working demo that clearly shows both successful recognition and failure cases
 
 ## Tech Stack
 
@@ -67,13 +72,13 @@ Mình xây dựng **License Plate Recognition** như một pipeline nhận diệ
 - Sử dụng **YOLOv8** để phát hiện vị trí biển số trong ảnh đầu vào
 - Xây dựng **quy trình xử lý ảnh bằng OpenCV** để làm sạch và chuẩn bị vùng biển số đã cắt
 - Tích hợp **Tesseract OCR** để trích xuất văn bản từ vùng biển số đã phát hiện
-- Tối ưu pipeline để tăng tốc độ xử lý và cải thiện độ ổn định cho bài toán gần thời gian thực
+- Triển khai giao diện thử nghiệm cho phép tải ảnh, xử lý, khoanh vùng biển số và hiển thị kết quả nhận diện
 
 ## Kết quả
 
 - Đạt độ chính xác nhận diện trên **85%**
 - Hoàn thiện được quy trình end-to-end từ phát hiện đến trích xuất ký tự
-- Củng cố kỹ năng thực tế về Python, computer vision, tích hợp mô hình và tối ưu hiệu năng
+- Xây dựng bản demo hiển thị rõ trường hợp nhận diện thành công và trường hợp không phát hiện được biển số
 
 ## Tech Stack
 
